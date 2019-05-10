@@ -1,6 +1,20 @@
+<a name="0.3.0"></a>
+# 0.3.0 (2019-05-10)
+
+
+### Upgrade
+
+* Add volume injection and pass parameters to the command ([35681e141d6756e18ab5fac6dc1c3ddc495db823](https://github.com/kairops/docker-command-launcher/commit/35681e141d6756e18ab5fac6dc1c3ddc495db823))
+
+
+
 <a name="0.2.0"></a>
 # 0.2.0 (2019-05-10)
 
+
+### Build
+
+* Update CHANGELOG.md to v0.2.0 with Red Panda JPL ([0349442eacb91c696588b2b6e2c24d29f27ca8af](https://github.com/kairops/docker-command-launcher/commit/0349442eacb91c696588b2b6e2c24d29f27ca8af))
 
 ### Upgrade
 
