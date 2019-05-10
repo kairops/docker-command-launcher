@@ -5,4 +5,4 @@ if [ $# -ne 1 ]; then
     echo >&2 "Usage: kd [command]"
     echo >&2 "Example: kd hello-world"
 fi
-docker run --rm -v $(pwd):/workspace kairops/dc-$1 
+docker run -i --rm -v $(pwd):/workspace kairops/dc-$1
