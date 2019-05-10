@@ -10,5 +10,6 @@ Simply Bash script to run dockerized commands.
 
 ## Available commands
 
-- [Hello World!](https://github.com/kairops/dc-hello-world.md)
-- [Git Changelog Generator](https://github.com/kairops/dc-git-changelog-generator.md)
+- [Hello World!](https://github.com/kairops/dc-hello-world)
+- [Git Changelog Generator](https://github.com/kairops/dc-git-changelog-generator)
+- [Markdown to HTML file conversion](https://github.com/kairops/dc-md2html)
