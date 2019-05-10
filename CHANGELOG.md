@@ -1,6 +1,20 @@
+<a name="0.3.1"></a>
+## 0.3.1 (2019-05-10)
+
+
+### Docs
+
+* Add md2html command info ([008c9d13a02c53f38f462ee7f2b90ffa444b16d6](https://github.com/kairops/docker-command-launcher/commit/008c9d13a02c53f38f462ee7f2b90ffa444b16d6))
+
+
+
 <a name="0.3.0"></a>
 # 0.3.0 (2019-05-10)
 
+
+### Build
+
+* Update CHANGELOG.md to v0.3.0 with Red Panda JPL ([3a97ce8d6952118c993ed1fea7609b5dc1118bfd](https://github.com/kairops/docker-command-launcher/commit/3a97ce8d6952118c993ed1fea7609b5dc1118bfd))
 
 ### Upgrade
 
