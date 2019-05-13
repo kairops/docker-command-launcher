@@ -1,3 +1,13 @@
+<a name="0.4.1"></a>
+## 0.4.1 (2019-05-13)
+
+
+### Docs
+
+* Add get-next-release-number info to the main readme ([01df439897d048cb0b74055458d7f580ef863207](https://github.com/kairops/docker-command-launcher/commit/01df439897d048cb0b74055458d7f580ef863207))
+
+
+
 <a name="0.4.0"></a>
 # 0.4.0 (2019-05-13)
 
@@ -5,6 +15,10 @@
 ### Breaking
 
 * Docker command wrapper refactor ([cd3deec3cb0d541948522ef1578f8ce5eeed9fcb](https://github.com/kairops/docker-command-launcher/commit/cd3deec3cb0d541948522ef1578f8ce5eeed9fcb))
+
+### Build
+
+* Update CHANGELOG.md to v0.4.0 with Red Panda JPL ([f2fcc3a1a353f7ac8329e6b1c4edfaee1ef1d005](https://github.com/kairops/docker-command-launcher/commit/f2fcc3a1a353f7ac8329e6b1c4edfaee1ef1d005))
 
 
 
