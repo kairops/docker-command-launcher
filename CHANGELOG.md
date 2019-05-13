@@ -1,6 +1,20 @@
+<a name="0.4.0"></a>
+# 0.4.0 (2019-05-13)
+
+
+### Breaking
+
+* Docker command wrapper refactor ([cd3deec3cb0d541948522ef1578f8ce5eeed9fcb](https://github.com/kairops/docker-command-launcher/commit/cd3deec3cb0d541948522ef1578f8ce5eeed9fcb))
+
+
+
 <a name="0.3.1"></a>
 ## 0.3.1 (2019-05-10)
 
+
+### Build
+
+* Update CHANGELOG.md to v0.3.1 with Red Panda JPL ([cf2789c733f9eabe0ecd966a898d5e03a70dfacf](https://github.com/kairops/docker-command-launcher/commit/cf2789c733f9eabe0ecd966a898d5e03a70dfacf))
 
 ### Docs
 
