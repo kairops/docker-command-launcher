@@ -1,6 +1,6 @@
 #!groovy
 
-@Library('github.com/red-panda-ci/jenkins-pipeline-library@v2.7.0') _
+@Library('github.com/red-panda-ci/jenkins-pipeline-library@v2.8.0') _
 
 // Initialize global config
 cfg = jplConfig('docker-command-launcher', 'bash', '', [slack: '#integrations', email:'redpandaci+docker-command-launcher@gmail.com'])
