@@ -36,11 +36,7 @@ fi
 command=$1
 image=kairops/dc-$command:latest
 if [ "$(docker image ls -q $image)" == "" ]; then
-    docker pull $image > /dev/null 2>&1
-    if [ $# -ne 0 ]; then
-        echo_err "The Docker Command '$command' does not exist. Aborting"
-        exit 1
-    fi
+    docker pull $image > /dev/null 2>&1 || (echo "The Docker Command '$command' does not exist. Aborting"; exit 1)
 fi
 shift
 
@@ -48,16 +44,20 @@ shift
 mountFolder=""
 file=""
 if [ $# -gt 0 ]; then
-    fileOrDirectory=$(echo "$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")")
-    if [ -f "$fileOrDirectory" ]; then
-        mountFolder=$(dirname "$fileOrDirectory")
-        file=$(basename "$fileOrDirectory")
+    if [ $1 == "-" ]; then
+        shift
     else
-        if [ -d "$fileOrDirectory" ]; then
-            mountFolder=$(dirname "$fileOrDirectory/.")
+        fileOrDirectory=$(echo "$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")")
+        if [ -f "$fileOrDirectory" ]; then
+            mountFolder=$(dirname "$fileOrDirectory")
+            file=$(basename "$fileOrDirectory")
+        else
+            if [ -d "$fileOrDirectory" ]; then
+                mountFolder=$(dirname "$fileOrDirectory/.")
+            fi
         fi
+        shift
     fi
-    shift
 fi
 mountInfo=""
 if [ "$mountFolder" != "" ]; then
