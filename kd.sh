@@ -36,7 +36,7 @@ fi
 command=$1
 image=kairops/dc-$command:latest
 if [ "$(docker image ls -q $image)" == "" ]; then
-    docker pull $image > /dev/null 2>&1 || (echo "The Docker Command '$command' does not exist. Aborting"; exit 1)
+    docker pull $image > /dev/null 2>&1 || (echo_err "The Docker Command '$command' does not exist. Aborting"; exit 1)
 fi
 shift
 
