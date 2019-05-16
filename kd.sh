@@ -7,7 +7,7 @@ function echo_err () {
 }
 
 function echo_debug () {
-    if [ $KD_DEBUG -eq 1 ]; then
+    if [ "$KD_DEBUG" == "1" ]; then
         echo >&2 -e ">>>> DEBUG >>>>> $(date "+%Y-%m-%d %H:%M:%S") docker-command-launcher: $@"
     fi
 }
