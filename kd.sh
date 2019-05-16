@@ -71,6 +71,6 @@ if [ "$mountFolder" != "" ]; then
 fi
 
 # Execute Docker Command with optional volume injection and input parameters
-dockerCommand=$(echo docker run -i --rm $mountInfo $image $file $@)
+dockerCommand=$(echo docker run -i --rm -e KD_DEBUG=$KD_DEBUG $mountInfo $image $file $@)
 echo_debug "Executing: '$dockerCommand'"
 eval $dockerCommand
