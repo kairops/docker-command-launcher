@@ -1,10 +1,18 @@
-* Update CHANGELOG.md to v0.4.1 with Red Panda JPL ([d947e57](https://github.com:kairops/docker-command-launcher/commit/d947e57))
+* Use the '-' option correctly ([9a140a4](https://github.com:kairops/docker-command-launcher/commit/9a140a4))
+
+### Build
+
+* Update to v2.9.1 jpl release ([aef0489](https://github.com:kairops/docker-command-launcher/commit/aef0489))
 
 ## v1.0.0 (2019-05-14)
 
 ### Breaking
 
 * Refactor stdin + parameters usage ([3c6c9a1](https://github.com:kairops/docker-command-launcher/commit/3c6c9a1))
+
+### Build
+
+* Update CHANGELOG.md to v1.0.0 with Red Panda JPL ([cfa64a8](https://github.com:kairops/docker-command-launcher/commit/cfa64a8))
 
 ### Docs
 
