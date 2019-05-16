@@ -44,9 +44,7 @@ shift
 mountFolder=""
 file=""
 if [ $# -gt 0 ]; then
-    if [ $1 == "-" ]; then
-        shift
-    else
+    if [ $1 != "-" ]; then
         fileOrDirectory=$(echo "$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")")
         if [ -f "$fileOrDirectory" ]; then
             mountFolder=$(dirname "$fileOrDirectory")
