@@ -1,3 +1,11 @@
+### Update
+
+* Refactor invalidate command cache strategy ([ef5e695](https://github.com:kairops/docker-command-launcher/commit/ef5e695))
+
+# Changelog
+
+## v1.1.0 (2019-05-17)
+
 ### New
 
 * Add update sentinel ([c3e86b1](https://github.com:kairops/docker-command-launcher/commit/c3e86b1))
@@ -17,6 +25,10 @@
 * Avoid an error when the debug flag is not set ([b01291c](https://github.com:kairops/docker-command-launcher/commit/b01291c))
 * Avoid an error when the debug flag is not set ([2b6d478](https://github.com:kairops/docker-command-launcher/commit/2b6d478))
 * Print error mensaje to stderr instead of stdout ([0d3076f](https://github.com:kairops/docker-command-launcher/commit/0d3076f))
+
+### Build
+
+* Update CHANGELOG.md to v1.1.0 with Red Panda JPL ([f01502c](https://github.com:kairops/docker-command-launcher/commit/f01502c))
 
 ### Docs
 
