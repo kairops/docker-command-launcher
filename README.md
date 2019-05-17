@@ -11,14 +11,13 @@ Simply Bash script to run dockerized commands.
 Command help:
 
 ```console
-$ kd
-Usage:  kd command [file_or_folder] [parameter] [parameter] [...]
+Usage:  kd command [file_or_folder] [parameter] [parameter] [...] [-v]
 
-  command:            The Docker Command to execute, like 'hello-world' or 'git-changelog-generator'
+command:            The Docker Command to execute, like 'hello-world' or 'git-changelog-generator'
 
 Options:
   [file_or_folder]:   Optional file or folder to give to the container
-  [parameter]:        Optional parameters. Depends on the 'docker-command' that you are running
+       [parameter]:   Optional parameters. Depends on the 'docker-command' you are running
 
 Examples:
 
@@ -29,7 +28,16 @@ You can also concatenate two or more Docker Commands through a pipe
 
 Examples:
 
-  kd git-changelog-generator . | kd md2html > changelog.html
+  kd git-changelog-generator . | kd md2html - > changelog.html
+
+Available commands:
+
+* get-next-release-number
+* git-changelog-generator
+* hello-world
+* md2html
+
+You can set KD_DEBUG=1 with 'export KD_DEBUG=1' to enable verbose debug info
 ```
 
 ## Available commands
