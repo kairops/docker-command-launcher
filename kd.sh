@@ -79,9 +79,6 @@ fi
 command=$1
 assertCommandExist $command
 image=$imagePrefix$command:latest
-if [ "$(docker image ls -q $image)" == "" ]; then
-    docker pull $image > /dev/null 2>&1 || (echo_err "The docker image for the '$command' can't be retrieved. Aborting"; exit 1)
-fi
 shift
 
 # Parameter (file and folder) check
@@ -127,14 +124,19 @@ if [ "$sentinel" != "" ]; then
 fi
 if [ "$sentinel" == "" ]; then
     # Retrieve all command cache
-    echo_err "Updating all docker-commands. This can take a while"
     sentinelTimestamp=$(date +%s)
     echo_debug "Creating new sentinel image $sentinelTimestamp"
     echo -e "FROM alpine\nRUN echo $sentinelTimestamp > /.sentinel.lock" | docker build -t ${imagePrefix}sentinel-${sentinelTimestamp} - > /dev/null 2>&1
     for command in ${commandList[*]}; do
-        echo_debug "Retrieving command $command"
-        docker pull ${imagePrefix}$command > /dev/null 2>&1
+        echo_debug "Removing docker-command image for '$command'"
+        docker rmi ${imagePrefix}$command > /dev/null 2>&1 || true
     done
+fi
+
+# Get image if not exist
+if [ "$(docker image ls -q $image)" == "" ]; then
+    echo_debug "Retrieving docker-command image $image"
+    docker pull $image > /dev/null 2>&1 || (echo_err "The docker image for the '$command' can't be retrieved. Aborting"; exit 1)
 fi
 
 # Execute Docker Command with optional volume injection and input parameters
