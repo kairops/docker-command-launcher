@@ -14,23 +14,32 @@ function echo_debug () {
 echo_debug "begin"
 echo_debug "Docker Command Launcher (c) Kairops 2019"
 
-# Command list
+# Functions
+function removeSentinel() {
+    sentinel=$1
+    echo_debug "Removing sentinel image(s) $sentinel"
+    docker rmi $sentinel > /dev/null 2>&1
+    sentinel=""
+}
+function assertCommandExist () {
+    local search="$1"
+    for command in ${commandList[*]}; do
+        [[ "$command" == "$search" ]] && return 0
+    done
+    echo_err "The Docker Command '$search' does not exist. Aborting"
+    echo_debug "end"
+    exit 1
+}
+
+# Initialize
 commandList=(
     get-next-release-number
     git-changelog-generator
     hello-world
     md2html
 )
-
-assertCommandExist () {
-    local command="$1"
-    for item in ${commandList[*]}; do
-        [[ "$item" == "$command" ]] && return 0
-    done
-    echo_err "The Docker Command '$command' does not exist. Aborting"
-    echo_debug "end"
-    exit 1
-}
+imagePrefix="kairops/dc-"
+commandCacheSeconds=86400
 
 # Parameters check
 if [ $# -eq 0 ]; then
@@ -69,7 +78,7 @@ fi
 # Command check
 command=$1
 assertCommandExist $command
-image=kairops/dc-$command:latest
+image=$imagePrefix$command:latest
 if [ "$(docker image ls -q $image)" == "" ]; then
     docker pull $image > /dev/null 2>&1 || (echo_err "The docker image for the '$command' can't be retrieved. Aborting"; exit 1)
 fi
@@ -95,6 +104,37 @@ fi
 mountInfo=""
 if [ "$mountFolder" != "" ]; then
     mountInfo=$(echo "-v \"$mountFolder\":/workspace"|sed "s/ /\\ /g")
+fi
+
+# Update command cache
+sentinel=$(docker images ${imagePrefix}sentinel-*|awk 'NR>1 {print $1}')
+if [ "$sentinel" != "" ]; then
+    # If more then one sentinel cache images exists, drop all
+    if [ $(echo "$sentinel"|wc -l) -gt 1 ]; then
+        removeSentinel "$sentinel"
+    else
+        # Check time elapsed since sentinel cache image creation
+        sentinelTimestamp=$(echo $sentinel|awk -F '-' '{print $NF}')
+        currentTimestamp=$(date +%s)
+        echo_debug "Sentinel timestamp: $sentinelTimestamp"
+        echo_debug "Current timesamp: $currentTimestamp"
+        secondsElapsed=$((currentTimestamp - sentinelTimestamp))
+        echo_debug "Seconds Elapsed: $secondsElapsed"
+        if [ $secondsElapsed -gt $commandCacheSeconds ]; then
+            removeSentinel "$sentinel"
+        fi
+    fi
+fi
+if [ "$sentinel" == "" ]; then
+    # Retrieve all command cache
+    echo_err "Updating all docker-commands. This can take a while"
+    sentinelTimestamp=$(date +%s)
+    echo_debug "Creating new sentinel image $sentinelTimestamp"
+    echo -e "FROM alpine\nRUN echo $sentinelTimestamp > /.sentinel.lock" | docker build -t ${imagePrefix}sentinel-${sentinelTimestamp} - > /dev/null 2>&1
+    for command in ${commandList[*]}; do
+        echo_debug "Retrieving command $command"
+        docker pull ${imagePrefix}$command > /dev/null 2>&1
+    done
 fi
 
 # Execute Docker Command with optional volume injection and input parameters
