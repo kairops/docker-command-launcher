@@ -3,7 +3,7 @@
 @Library('github.com/red-panda-ci/jenkins-pipeline-library@v2.9.1') _
 
 // Initialize global config
-cfg = jplConfig('docker-command-launcher', 'bash', '', [slack: '#integrations', email:'redpandaci+docker-command-launcher@gmail.com'])
+cfg = jplConfig('docker-command-launcher', 'bash', '', [email:'redpandaci+docker-command-launcher@gmail.com'])
 
 pipeline {
     agent none
@@ -47,7 +47,6 @@ pipeline {
         ansiColor('xterm')
         buildDiscarder(logRotator(artifactNumToKeepStr: '20',artifactDaysToKeepStr: '30'))
         disableConcurrentBuilds()
-        skipDefaultCheckout()
         timeout(time: 1, unit: 'DAYS')
     }
 }
