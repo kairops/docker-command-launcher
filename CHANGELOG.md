@@ -1,8 +1,22 @@
+* Add commit-validator to the command list ([5e19e4b](https://github.com:kairops/docker-command-launcher/commit/5e19e4b))
+
+### Build
+
+* Enable default checkout and disable slack notifications ([cf6f5ea](https://github.com:kairops/docker-command-launcher/commit/cf6f5ea))
+
+### Docs
+
+* Add commit-validator command info to the main README file ([54affe3](https://github.com:kairops/docker-command-launcher/commit/54affe3))
+
+## v1.1.1 (2019-05-17)
+
 ### Update
 
 * Refactor invalidate command cache strategy ([ef5e695](https://github.com:kairops/docker-command-launcher/commit/ef5e695))
 
-# Changelog
+### Build
+
+* Update CHANGELOG.md to v1.1.1 with Red Panda JPL ([cc03976](https://github.com:kairops/docker-command-launcher/commit/cc03976))
 
 ## v1.1.0 (2019-05-17)
 
@@ -34,8 +48,6 @@
 
 * Update help section on the main readme ([d47950c](https://github.com:kairops/docker-command-launcher/commit/d47950c))
 
-# Changelog
-
 ## v1.0.1 (2019-05-16)
 
 ### Fix
@@ -46,8 +58,6 @@
 
 * Update CHANGELOG.md to v1.0.1 with Red Panda JPL ([cacbee3](https://github.com:kairops/docker-command-launcher/commit/cacbee3))
 * Update to v2.9.1 jpl release ([aef0489](https://github.com:kairops/docker-command-launcher/commit/aef0489))
-
-# Changelog
 
 ## v1.0.0 (2019-05-14)
 
@@ -64,8 +74,6 @@
 * Update changelog ([053ffd7](https://github.com:kairops/docker-command-launcher/commit/053ffd7))
 * Update main readme info ([d2c94f9](https://github.com:kairops/docker-command-launcher/commit/d2c94f9))
 
-# Changelog
-
 ## v0.4.1 (2019-05-13)
 
 ### Build
@@ -75,8 +83,6 @@
 ### Docs
 
 * Add get-next-release-number info to the main readme ([01df439](https://github.com:kairops/docker-command-launcher/commit/01df439))
-
-# Changelog
 
 ## v0.4.0 (2019-05-13)
 
@@ -88,8 +94,6 @@
 
 * Update CHANGELOG.md to v0.4.0 with Red Panda JPL ([f2fcc3a](https://github.com:kairops/docker-command-launcher/commit/f2fcc3a))
 
-# Changelog
-
 ## v0.3.1 (2019-05-10)
 
 ### Build
@@ -99,8 +103,6 @@
 ### Docs
 
 * Add md2html command info ([008c9d1](https://github.com:kairops/docker-command-launcher/commit/008c9d1))
-
-# Changelog
 
 ## v0.3.0 (2019-05-10)
 
@@ -112,8 +114,6 @@
 
 * Update CHANGELOG.md to v0.3.0 with Red Panda JPL ([3a97ce8](https://github.com:kairops/docker-command-launcher/commit/3a97ce8))
 
-# Changelog
-
 ## v0.2.0 (2019-05-10)
 
 ### Upgrade
@@ -123,8 +123,6 @@
 ### Build
 
 * Update CHANGELOG.md to v0.2.0 with Red Panda JPL ([0349442](https://github.com:kairops/docker-command-launcher/commit/0349442))
-
-# Changelog
 
 ## v0.1.0 (2019-05-10)
 
