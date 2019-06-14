@@ -24,7 +24,7 @@ function removeSentinel() {
 function assertCommandExist () {
     local search="$1"
     for command in ${commandList[*]}; do
-        [[ "$command" == "$search" ]] && return 0
+        [[ "$(echo $command|cut -f 1 -d ':')" == $search ]] && return 0
     done
     echo_err "The Docker Command '$search' does not exist. Aborting"
     echo_debug "end"
@@ -33,11 +33,12 @@ function assertCommandExist () {
 
 # Initialize
 commandList=(
-    commit-validator
-    get-next-release-number
-    git-changelog-generator
-    hello-world
-    md2html
+    commit-validator:0.1.1
+    get-next-release-number:1.0.2
+    git-changelog-generator:0.7.4
+    hello-world:0.2.1
+    md2html:1.1.1
+    mdline:0.1.0
 )
 imagePrefix="kairops/dc-"
 commandCacheSeconds=86400
@@ -65,13 +66,21 @@ Examples:
 
 Available commands:
 "
-
     for item in ${commandList[*]}; do
-        echo "* $item"
+        echo -n "* $(echo $item|cut -f 1 -d ':')"
+        if [ "$KD_EDGE" == "1" ]; then
+            echo " (latest)"
+        else
+            echo " v$(echo $item|cut -f 2 -d ':')"
+        fi
     done
 
     echo_err
-    echo_err "You can set KD_DEBUG=1 with 'export KD_DEBUG=1' to enable verbose debug info"
+    echo_err "Other options:
+- KD_DEBUG=1    to enable verbose debug info (``export KD_DEBUG=1``)
+- KD_EDGE=1     to use the latest release of the commands (``export KD_EDGE=1``)
+- KD_SENTINEL=1 to enable a 24h image cache sentinel (``export KD_SENTINEL=1``)
+"
     echo_debug "end"
     exit 0
 fi
@@ -79,7 +88,12 @@ fi
 # Command check
 command=$1
 assertCommandExist $command
-image=$imagePrefix$command:latest
+if [ "$KD_EDGE" == "1" ]; then
+    command=$(echo $command|cut -f 1 -d ':')
+    command=$(echo "$command:latest")
+    echo $command
+fi
+image=$imagePrefix$command
 shift
 
 # Parameter (file and folder) check
@@ -105,33 +119,35 @@ if [ "$mountFolder" != "" ]; then
 fi
 
 # Update command cache
-sentinel=$(docker images ${imagePrefix}sentinel-*|awk 'NR>1 {print $1}')
-if [ "$sentinel" != "" ]; then
-    # If more then one sentinel cache images exists, drop all
-    if [ $(echo "$sentinel"|wc -l) -gt 1 ]; then
-        removeSentinel "$sentinel"
-    else
-        # Check time elapsed since sentinel cache image creation
-        sentinelTimestamp=$(echo $sentinel|awk -F '-' '{print $NF}')
-        currentTimestamp=$(date +%s)
-        echo_debug "Sentinel timestamp: $sentinelTimestamp"
-        echo_debug "Current timesamp: $currentTimestamp"
-        secondsElapsed=$((currentTimestamp - sentinelTimestamp))
-        echo_debug "Seconds Elapsed: $secondsElapsed"
-        if [ $secondsElapsed -gt $commandCacheSeconds ]; then
+if [ "$KD_SENTINEL" == "1" ]; then
+    sentinel=$(docker images ${imagePrefix}sentinel-*|awk 'NR>1 {print $1}')
+    if [ "$sentinel" != "" ]; then
+        # If more then one sentinel cache images exists, drop all
+        if [ $(echo "$sentinel"|wc -l) -gt 1 ]; then
             removeSentinel "$sentinel"
+        else
+            # Check time elapsed since sentinel cache image creation
+            sentinelTimestamp=$(echo $sentinel|awk -F '-' '{print $NF}')
+            currentTimestamp=$(date +%s)
+            echo_debug "Sentinel timestamp: $sentinelTimestamp"
+            echo_debug "Current timesamp: $currentTimestamp"
+            secondsElapsed=$((currentTimestamp - sentinelTimestamp))
+            echo_debug "Seconds Elapsed: $secondsElapsed"
+            if [ $secondsElapsed -gt $commandCacheSeconds ]; then
+                removeSentinel "$sentinel"
+            fi
         fi
     fi
-fi
-if [ "$sentinel" == "" ]; then
-    # Retrieve all command cache
-    sentinelTimestamp=$(date +%s)
-    echo_debug "Creating new sentinel image $sentinelTimestamp"
-    echo -e "FROM alpine\nRUN echo $sentinelTimestamp > /.sentinel.lock" | docker build -t ${imagePrefix}sentinel-${sentinelTimestamp} - > /dev/null 2>&1
-    for command in ${commandList[*]}; do
-        echo_debug "Removing docker-command image for '$command'"
-        docker rmi ${imagePrefix}$command > /dev/null 2>&1 || true
-    done
+    if [ "$sentinel" == "" ]; then
+        # Retrieve all command cache
+        sentinelTimestamp=$(date +%s)
+        echo_debug "Creating new sentinel image $sentinelTimestamp"
+        echo -e "FROM alpine\nRUN echo $sentinelTimestamp > /.sentinel.lock" | docker build -t ${imagePrefix}sentinel-${sentinelTimestamp} - > /dev/null 2>&1
+        for command in ${commandList[*]}; do
+            echo_debug "Removing docker-command image for '$command'"
+            docker rmi ${imagePrefix}$command > /dev/null 2>&1 || true
+        done
+    fi
 fi
 
 # Get image if not exist
