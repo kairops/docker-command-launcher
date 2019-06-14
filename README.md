@@ -6,12 +6,12 @@ Simply Bash script to run dockerized commands.
 
 1. Copy the `kd.sh` script to /usr/local/bin with `cp kd.sh /usr/local/bin/kd`
 2. Make it executable with `chmod 777 /usr/local/bin/kd`
-3. Execute any Docker Command with `kd command-name [parameter]`
+3. Execute any Docker Command with `kd command [file_or_folder] [parameter] [parameter] [...]`
 
 Command help:
 
 ```console
-Usage:  kd command [file_or_folder] [parameter] [parameter] [...] [-v]
+Usage:  kd command [file_or_folder] [parameter] [parameter] [...]
 
 command:            The Docker Command to execute, like 'hello-world' or 'git-changelog-generator'
 
@@ -32,13 +32,17 @@ Examples:
 
 Available commands:
 
-* commit-validator
-* get-next-release-number
-* git-changelog-generator
-* hello-world
-* md2html
+* commit-validator v0.1.1
+* get-next-release-number v1.0.2
+* git-changelog-generator v0.7.4
+* hello-world v0.2.1
+* md2html v1.1.1
+* mdline v0.1.0
 
-You can set KD_DEBUG=1 with 'export KD_DEBUG=1' to enable verbose debug info
+Other options:
+- KD_DEBUG=1    to enable verbose debug info (export KD_DEBUG=1)
+- KD_EDGE=1     to use the latest release of the commands (export KD_EDGE=1)
+- KD_SENTINEL=1 to enable a 24h image cache sentinel (export KD_SENTINEL=1)
 ```
 
 ## Available commands
