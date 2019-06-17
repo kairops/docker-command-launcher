@@ -1,5 +1,16 @@
 # Changelog
 
+## v2.0.2 (2019-06-17)
+
+### Build
+
+* Update Auto Release Log adding v2.0.2 info with JPL ([4401fca](https://github.com/kairops/docker-command-launcher/commit/4401fca))
+
+### Docs
+
+* Upfste main readme links, add mdline command ([8882bb2](https://github.com/kairops/docker-command-launcher/commit/8882bb2))
+* Generate v2.0.1 changelog with JPL ([e6f9663](https://github.com/kairops/docker-command-launcher/commit/e6f9663))
+
 ## v2.0.1 (2019-06-14)
 
 ### Build
