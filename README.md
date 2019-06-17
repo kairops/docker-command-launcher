@@ -47,8 +47,9 @@ Other options:
 
 ## Available commands
 
-- [Commit Validator](https://github.com/kairops/dc-commit-validator)
-- [Get Next Release Number](https://github.com/kairops/dc-get-next-release-number)
-- [Git Changelog Generator](https://github.com/kairops/dc-git-changelog-generator)
-- [Hello World!](https://github.com/kairops/dc-hello-world)
-- [Markdown to HTML file conversion](https://github.com/kairops/dc-md2html)
+- Commit Validator ([commit-validator](https://github.com/kairops/dc-commit-validator))
+- Get Next Release Number ([get-next-release-number](https://github.com/kairops/dc-get-next-release-number))
+- Git Changelog Generator ([git-changelog-generator](https://github.com/kairops/dc-git-changelog-generator))
+- Hello World! ([hello-world](https://github.com/kairops/dc-hello-world))
+- Markdown to HTML file conversion ([md2html](https://github.com/kairops/dc-md2html))
+- Markdown to Timeline HTML ([mdline](https://github.com/kairops/dc-mdline))
