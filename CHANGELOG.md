@@ -1,5 +1,20 @@
 # Changelog
 
+## v2.1.1 (2019-06-24)
+
+### Update
+
+* Use git-changelog-generator:0.7.8 docker image ([4f67890](https://github.com/kairops/docker-command-launcher/commit/4f67890))
+* Use git-changelog-generator:0.7.7 docker image ([3336a46](https://github.com/kairops/docker-command-launcher/commit/3336a46))
+
+### Build
+
+* Update Auto Release Log adding v2.1.1 info with JPL ([879b62b](https://github.com/kairops/docker-command-launcher/commit/879b62b))
+
+### Docs
+
+* Generate v2.1.0 changelog with JPL ([ef3ea64](https://github.com/kairops/docker-command-launcher/commit/ef3ea64))
+
 ## v2.1.0 (2019-06-19)
 
 ### Upgrade
