@@ -1,5 +1,20 @@
 # Changelog
 
+## v2.2.0 (2020-03-09)
+
+### Upgrade
+
+* Use git-changelog-generator v1.0.0 ([709275a](https://github.com/kairops/docker-command-launcher/commit/709275a))
+
+### Build
+
+* Update Auto Release Log adding v2.2.0 info with JPL ([0769397](https://github.com/kairops/docker-command-launcher/commit/0769397))
+* Use teecke jpl v3.4.1 ([bd79092](https://github.com/kairops/docker-command-launcher/commit/bd79092))
+
+### Docs
+
+* Generate v2.1.2 changelog with JPL ([826548e](https://github.com/kairops/docker-command-launcher/commit/826548e))
+
 ## v2.1.2 (2019-09-26)
 
 ### Update
