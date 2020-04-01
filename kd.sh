@@ -33,7 +33,7 @@ function assertCommandExist () {
 
 # Initialize
 commandList=(
-    commit-validator:0.1.3
+    commit-validator:0.1.4
     get-next-release-number:1.0.4
     git-changelog-generator:1.1.0
     hello-world:0.2.1
