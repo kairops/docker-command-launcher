@@ -1,240 +1,376 @@
 # Changelog
 
+## v2.3.0 (2020-04-01)
+
+### Changes
+
+#### Upgrade
+
+* Use git-changelog-generator v1.1.1 ([0617c0a](https://github.com:kairops/docker-command-launcher/commit/0617c0a))
+* Use commit-validator v0.1.4 ([49470c3](https://github.com:kairops/docker-command-launcher/commit/49470c3))
+* Use get-next-release-number v1.0.4 ([f789d73](https://github.com:kairops/docker-command-launcher/commit/f789d73))
+* Use git-changelog-generator v1.1.0 ([4a0c85e](https://github.com:kairops/docker-command-launcher/commit/4a0c85e))
+
+#### Build
+
+* Update Auto Release Log adding v2.3.0 info with JPL ([a7f71c3](https://github.com:kairops/docker-command-launcher/commit/a7f71c3))
+
+#### Docs
+
+* Generate v2.2.0 changelog with JPL ([5aa7145](https://github.com:kairops/docker-command-launcher/commit/5aa7145))
+
+### Authors
+
+* Pedro Amador
+
 ## v2.2.0 (2020-03-09)
 
-### Upgrade
+### Changes
 
-* Use git-changelog-generator v1.0.0 ([709275a](https://github.com/kairops/docker-command-launcher/commit/709275a))
+#### Upgrade
 
-### Build
+* Use git-changelog-generator v1.0.0 ([709275a](https://github.com:kairops/docker-command-launcher/commit/709275a))
 
-* Update Auto Release Log adding v2.2.0 info with JPL ([0769397](https://github.com/kairops/docker-command-launcher/commit/0769397))
-* Use teecke jpl v3.4.1 ([bd79092](https://github.com/kairops/docker-command-launcher/commit/bd79092))
+#### Build
 
-### Docs
+* Update Auto Release Log adding v2.2.0 info with JPL ([0769397](https://github.com:kairops/docker-command-launcher/commit/0769397))
+* Use teecke jpl v3.4.1 ([bd79092](https://github.com:kairops/docker-command-launcher/commit/bd79092))
 
-* Generate v2.1.2 changelog with JPL ([826548e](https://github.com/kairops/docker-command-launcher/commit/826548e))
+#### Docs
+
+* Generate v2.1.2 changelog with JPL ([826548e](https://github.com:kairops/docker-command-launcher/commit/826548e))
+
+### Authors
+
+* Pedro Amador
 
 ## v2.1.2 (2019-09-26)
 
-### Update
+### Changes
 
-* Use git-changelog-generator:0.7.9 docker image ([eef4279](https://github.com/kairops/docker-command-launcher/commit/eef4279))
+#### Update
 
-### Build
+* Use git-changelog-generator:0.7.9 docker image ([eef4279](https://github.com:kairops/docker-command-launcher/commit/eef4279))
 
-* Update Auto Release Log adding v2.1.2 info with JPL ([1d13649](https://github.com/kairops/docker-command-launcher/commit/1d13649))
+#### Build
 
-### Docs
+* Update Auto Release Log adding v2.1.2 info with JPL ([1d13649](https://github.com:kairops/docker-command-launcher/commit/1d13649))
 
-* Generate v2.1.1 changelog with JPL ([e4a8e66](https://github.com/kairops/docker-command-launcher/commit/e4a8e66))
+#### Docs
+
+* Generate v2.1.1 changelog with JPL ([e4a8e66](https://github.com:kairops/docker-command-launcher/commit/e4a8e66))
+
+### Authors
+
+* Pedro Amador
 
 ## v2.1.1 (2019-06-24)
 
-### Update
+### Changes
 
-* Use git-changelog-generator:0.7.8 docker image ([4f67890](https://github.com/kairops/docker-command-launcher/commit/4f67890))
-* Use git-changelog-generator:0.7.7 docker image ([3336a46](https://github.com/kairops/docker-command-launcher/commit/3336a46))
+#### Update
 
-### Build
+* Use git-changelog-generator:0.7.8 docker image ([4f67890](https://github.com:kairops/docker-command-launcher/commit/4f67890))
+* Use git-changelog-generator:0.7.7 docker image ([3336a46](https://github.com:kairops/docker-command-launcher/commit/3336a46))
 
-* Update Auto Release Log adding v2.1.1 info with JPL ([879b62b](https://github.com/kairops/docker-command-launcher/commit/879b62b))
+#### Build
 
-### Docs
+* Update Auto Release Log adding v2.1.1 info with JPL ([879b62b](https://github.com:kairops/docker-command-launcher/commit/879b62b))
 
-* Generate v2.1.0 changelog with JPL ([ef3ea64](https://github.com/kairops/docker-command-launcher/commit/ef3ea64))
+#### Docs
+
+* Generate v2.1.0 changelog with JPL ([ef3ea64](https://github.com:kairops/docker-command-launcher/commit/ef3ea64))
+
+### Authors
+
+* Pedro Amador
 
 ## v2.1.0 (2019-06-19)
 
-### Upgrade
+### Changes
 
-* Update image release numbers ([8fd530a](https://github.com/kairops/docker-command-launcher/commit/8fd530a))
+#### Upgrade
 
-### Build
+* Update image release numbers ([8fd530a](https://github.com:kairops/docker-command-launcher/commit/8fd530a))
 
-* Update Auto Release Log adding v2.1.0 info with JPL ([903f423](https://github.com/kairops/docker-command-launcher/commit/903f423))
+#### Build
 
-### Docs
+* Update Auto Release Log adding v2.1.0 info with JPL ([903f423](https://github.com:kairops/docker-command-launcher/commit/903f423))
 
-* Generate v2.0.2 changelog with JPL ([e383045](https://github.com/kairops/docker-command-launcher/commit/e383045))
+#### Docs
+
+* Generate v2.0.2 changelog with JPL ([e383045](https://github.com:kairops/docker-command-launcher/commit/e383045))
+
+### Authors
+
+* Pedro Amador
 
 ## v2.0.2 (2019-06-17)
 
-### Build
+### Changes
 
-* Update Auto Release Log adding v2.0.2 info with JPL ([4401fca](https://github.com/kairops/docker-command-launcher/commit/4401fca))
+#### Build
 
-### Docs
+* Update Auto Release Log adding v2.0.2 info with JPL ([4401fca](https://github.com:kairops/docker-command-launcher/commit/4401fca))
 
-* Upfste main readme links, add mdline command ([8882bb2](https://github.com/kairops/docker-command-launcher/commit/8882bb2))
-* Generate v2.0.1 changelog with JPL ([e6f9663](https://github.com/kairops/docker-command-launcher/commit/e6f9663))
+#### Docs
+
+* Upfste main readme links, add mdline command ([8882bb2](https://github.com:kairops/docker-command-launcher/commit/8882bb2))
+* Generate v2.0.1 changelog with JPL ([e6f9663](https://github.com:kairops/docker-command-launcher/commit/e6f9663))
+
+### Authors
+
+* Pedro Amador
 
 ## v2.0.1 (2019-06-14)
 
-### Build
+### Changes
 
-* Update Auto Release Log adding v2.0.1 info with JPL ([803bf9d](https://github.com/kairops/docker-command-launcher/commit/803bf9d))
+#### Build
 
-### Docs
+* Update Auto Release Log adding v2.0.1 info with JPL ([803bf9d](https://github.com:kairops/docker-command-launcher/commit/803bf9d))
 
-* Update main readme file ([ab89cd4](https://github.com/kairops/docker-command-launcher/commit/ab89cd4))
-* Generate v2.0.0 changelog with JPL ([6ca5b4b](https://github.com/kairops/docker-command-launcher/commit/6ca5b4b))
+#### Docs
+
+* Update main readme file ([ab89cd4](https://github.com:kairops/docker-command-launcher/commit/ab89cd4))
+* Generate v2.0.0 changelog with JPL ([6ca5b4b](https://github.com:kairops/docker-command-launcher/commit/6ca5b4b))
+
+### Authors
+
+* Pedro Amador
 
 ## v2.0.0 (2019-06-14)
 
-### Breaking
+### Changes
 
-* Use tags for commands instead latest ([1fffebf](https://github.com/kairops/docker-command-launcher/commit/1fffebf))
+#### Breaking
 
-### New
+* Use tags for commands instead latest ([1fffebf](https://github.com:kairops/docker-command-launcher/commit/1fffebf))
 
-* Add mdline command and use tags instead latest ([3d3fd3d](https://github.com/kairops/docker-command-launcher/commit/3d3fd3d))
+#### New
 
-### Build
+* Add mdline command and use tags instead latest ([3d3fd3d](https://github.com:kairops/docker-command-launcher/commit/3d3fd3d))
 
-* Update Auto Release Log adding v2.0.0 info with JPL ([0d5de31](https://github.com/kairops/docker-command-launcher/commit/0d5de31))
-* Update to jpl v3.1.6 ([d4fce09](https://github.com/kairops/docker-command-launcher/commit/d4fce09))
+#### Build
+
+* Update Auto Release Log adding v2.0.0 info with JPL ([0d5de31](https://github.com:kairops/docker-command-launcher/commit/0d5de31))
+* Update to jpl v3.1.6 ([d4fce09](https://github.com:kairops/docker-command-launcher/commit/d4fce09))
+
+### Authors
+
+* Pedro Amador
 
 ## v1.2.0 (2019-05-20)
 
-### New
+### Changes
 
-* Add commit-validator to the command list ([5e19e4b](https://github.com/kairops/docker-command-launcher/commit/5e19e4b))
+#### New
 
-### Build
+* Add commit-validator to the command list ([5e19e4b](https://github.com:kairops/docker-command-launcher/commit/5e19e4b))
 
-* Update CHANGELOG.md to v1.2.0 with Red Panda JPL ([d1358fe](https://github.com/kairops/docker-command-launcher/commit/d1358fe))
-* Enable default checkout and disable slack notifications ([cf6f5ea](https://github.com/kairops/docker-command-launcher/commit/cf6f5ea))
+#### Build
 
-### Docs
+* Update CHANGELOG.md to v1.2.0 with Red Panda JPL ([d1358fe](https://github.com:kairops/docker-command-launcher/commit/d1358fe))
+* Enable default checkout and disable slack notifications ([cf6f5ea](https://github.com:kairops/docker-command-launcher/commit/cf6f5ea))
 
-* Add commit-validator command info to the main README file ([54affe3](https://github.com/kairops/docker-command-launcher/commit/54affe3))
+#### Docs
+
+* Add commit-validator command info to the main README file ([54affe3](https://github.com:kairops/docker-command-launcher/commit/54affe3))
+
+### Authors
+
+* Pedro Amador
 
 ## v1.1.1 (2019-05-17)
 
-### Update
+### Changes
 
-* Refactor invalidate command cache strategy ([ef5e695](https://github.com/kairops/docker-command-launcher/commit/ef5e695))
+#### Update
 
-### Build
+* Refactor invalidate command cache strategy ([ef5e695](https://github.com:kairops/docker-command-launcher/commit/ef5e695))
 
-* Update CHANGELOG.md to v1.1.1 with Red Panda JPL ([cc03976](https://github.com/kairops/docker-command-launcher/commit/cc03976))
+#### Build
+
+* Update CHANGELOG.md to v1.1.1 with Red Panda JPL ([cc03976](https://github.com:kairops/docker-command-launcher/commit/cc03976))
+
+### Authors
+
+* Pedro Amador
 
 ## v1.1.0 (2019-05-17)
 
-### New
+### Changes
 
-* Add update sentinel ([c3e86b1](https://github.com/kairops/docker-command-launcher/commit/c3e86b1))
+#### New
 
-### Upgrade
+* Add update sentinel ([c3e86b1](https://github.com:kairops/docker-command-launcher/commit/c3e86b1))
 
-* Add command list with existance checking (fixes #1) ([3467287](https://github.com/kairops/docker-command-launcher/commit/3467287))
+#### Upgrade
 
-### Update
+* Add command list with existance checking (fixes #1) ([3467287](https://github.com:kairops/docker-command-launcher/commit/3467287))
 
-* Review of kd help info ([d3fbf0e](https://github.com/kairops/docker-command-launcher/commit/d3fbf0e))
-* Propagate debug flag to commands ([9cf5fcf](https://github.com/kairops/docker-command-launcher/commit/9cf5fcf))
-* Add debug option (fixes #3) ([f593262](https://github.com/kairops/docker-command-launcher/commit/f593262))
+#### Update
 
-### Fix
+* Review of kd help info ([d3fbf0e](https://github.com:kairops/docker-command-launcher/commit/d3fbf0e))
+* Propagate debug flag to commands ([9cf5fcf](https://github.com:kairops/docker-command-launcher/commit/9cf5fcf))
+* Add debug option (fixes #3) ([f593262](https://github.com:kairops/docker-command-launcher/commit/f593262))
 
-* Avoid an error when the debug flag is not set ([b01291c](https://github.com/kairops/docker-command-launcher/commit/b01291c))
-* Avoid an error when the debug flag is not set ([2b6d478](https://github.com/kairops/docker-command-launcher/commit/2b6d478))
-* Print error mensaje to stderr instead of stdout ([0d3076f](https://github.com/kairops/docker-command-launcher/commit/0d3076f))
+#### Fix
 
-### Build
+* Avoid an error when the debug flag is not set ([b01291c](https://github.com:kairops/docker-command-launcher/commit/b01291c))
+* Avoid an error when the debug flag is not set ([2b6d478](https://github.com:kairops/docker-command-launcher/commit/2b6d478))
+* Print error mensaje to stderr instead of stdout ([0d3076f](https://github.com:kairops/docker-command-launcher/commit/0d3076f))
 
-* Update CHANGELOG.md to v1.1.0 with Red Panda JPL ([f01502c](https://github.com/kairops/docker-command-launcher/commit/f01502c))
+#### Build
 
-### Docs
+* Update CHANGELOG.md to v1.1.0 with Red Panda JPL ([f01502c](https://github.com:kairops/docker-command-launcher/commit/f01502c))
 
-* Update help section on the main readme ([d47950c](https://github.com/kairops/docker-command-launcher/commit/d47950c))
+#### Docs
+
+* Update help section on the main readme ([d47950c](https://github.com:kairops/docker-command-launcher/commit/d47950c))
+
+### Authors
+
+* Pedro Amador
 
 ## v1.0.1 (2019-05-16)
 
-### Fix
+### Changes
 
-* Use the '-' option correctly ([9a140a4](https://github.com/kairops/docker-command-launcher/commit/9a140a4))
+#### Fix
 
-### Build
+* Use the '-' option correctly ([9a140a4](https://github.com:kairops/docker-command-launcher/commit/9a140a4))
 
-* Update CHANGELOG.md to v1.0.1 with Red Panda JPL ([cacbee3](https://github.com/kairops/docker-command-launcher/commit/cacbee3))
-* Update to v2.9.1 jpl release ([aef0489](https://github.com/kairops/docker-command-launcher/commit/aef0489))
+#### Build
+
+* Update CHANGELOG.md to v1.0.1 with Red Panda JPL ([cacbee3](https://github.com:kairops/docker-command-launcher/commit/cacbee3))
+* Update to v2.9.1 jpl release ([aef0489](https://github.com:kairops/docker-command-launcher/commit/aef0489))
+
+### Authors
+
+* Pedro Amador
 
 ## v1.0.0 (2019-05-14)
 
-### Breaking
+### Changes
 
-* Refactor stdin + parameters usage ([3c6c9a1](https://github.com/kairops/docker-command-launcher/commit/3c6c9a1))
+#### Breaking
 
-### Build
+* Refactor stdin + parameters usage ([3c6c9a1](https://github.com:kairops/docker-command-launcher/commit/3c6c9a1))
 
-* Update CHANGELOG.md to v1.0.0 with Red Panda JPL ([cfa64a8](https://github.com/kairops/docker-command-launcher/commit/cfa64a8))
+#### Build
 
-### Docs
+* Update CHANGELOG.md to v1.0.0 with Red Panda JPL ([cfa64a8](https://github.com:kairops/docker-command-launcher/commit/cfa64a8))
 
-* Update changelog ([053ffd7](https://github.com/kairops/docker-command-launcher/commit/053ffd7))
-* Update main readme info ([d2c94f9](https://github.com/kairops/docker-command-launcher/commit/d2c94f9))
+#### Docs
+
+* Update changelog ([053ffd7](https://github.com:kairops/docker-command-launcher/commit/053ffd7))
+* Update main readme info ([d2c94f9](https://github.com:kairops/docker-command-launcher/commit/d2c94f9))
+
+### Authors
+
+* Pedro Amador
 
 ## v0.4.1 (2019-05-13)
 
-### Build
+### Changes
 
-* Update CHANGELOG.md to v0.4.1 with Red Panda JPL ([d947e57](https://github.com/kairops/docker-command-launcher/commit/d947e57))
+#### Build
 
-### Docs
+* Update CHANGELOG.md to v0.4.1 with Red Panda JPL ([d947e57](https://github.com:kairops/docker-command-launcher/commit/d947e57))
 
-* Add get-next-release-number info to the main readme ([01df439](https://github.com/kairops/docker-command-launcher/commit/01df439))
+#### Docs
+
+* Add get-next-release-number info to the main readme ([01df439](https://github.com:kairops/docker-command-launcher/commit/01df439))
+
+### Authors
+
+* Pedro Amador
 
 ## v0.4.0 (2019-05-13)
 
-### Breaking
+### Changes
 
-* Docker command wrapper refactor ([cd3deec](https://github.com/kairops/docker-command-launcher/commit/cd3deec))
+#### Breaking
 
-### Build
+* Docker command wrapper refactor ([cd3deec](https://github.com:kairops/docker-command-launcher/commit/cd3deec))
 
-* Update CHANGELOG.md to v0.4.0 with Red Panda JPL ([f2fcc3a](https://github.com/kairops/docker-command-launcher/commit/f2fcc3a))
+#### Build
+
+* Update CHANGELOG.md to v0.4.0 with Red Panda JPL ([f2fcc3a](https://github.com:kairops/docker-command-launcher/commit/f2fcc3a))
+
+### Authors
+
+* Pedro Amador
 
 ## v0.3.1 (2019-05-10)
 
-### Build
+### Changes
 
-* Update CHANGELOG.md to v0.3.1 with Red Panda JPL ([cf2789c](https://github.com/kairops/docker-command-launcher/commit/cf2789c))
+#### Build
 
-### Docs
+* Update CHANGELOG.md to v0.3.1 with Red Panda JPL ([cf2789c](https://github.com:kairops/docker-command-launcher/commit/cf2789c))
 
-* Add md2html command info ([008c9d1](https://github.com/kairops/docker-command-launcher/commit/008c9d1))
+#### Docs
+
+* Add md2html command info ([008c9d1](https://github.com:kairops/docker-command-launcher/commit/008c9d1))
+
+### Authors
+
+* Pedro Amador
 
 ## v0.3.0 (2019-05-10)
 
-### Upgrade
+### Changes
 
-* Add volume injection and pass parameters to the command ([35681e1](https://github.com/kairops/docker-command-launcher/commit/35681e1))
+#### Upgrade
 
-### Build
+* Add volume injection and pass parameters to the command ([35681e1](https://github.com:kairops/docker-command-launcher/commit/35681e1))
 
-* Update CHANGELOG.md to v0.3.0 with Red Panda JPL ([3a97ce8](https://github.com/kairops/docker-command-launcher/commit/3a97ce8))
+#### Build
+
+* Update CHANGELOG.md to v0.3.0 with Red Panda JPL ([3a97ce8](https://github.com:kairops/docker-command-launcher/commit/3a97ce8))
+
+### Authors
+
+* Pedro Amador
 
 ## v0.2.0 (2019-05-10)
 
-### Upgrade
+### Changes
 
-* Use standard input with the command ([8fd1763](https://github.com/kairops/docker-command-launcher/commit/8fd1763))
+#### Upgrade
 
-### Build
+* Use standard input with the command ([8fd1763](https://github.com:kairops/docker-command-launcher/commit/8fd1763))
 
-* Update CHANGELOG.md to v0.2.0 with Red Panda JPL ([0349442](https://github.com/kairops/docker-command-launcher/commit/0349442))
+#### Build
+
+* Update CHANGELOG.md to v0.2.0 with Red Panda JPL ([0349442](https://github.com:kairops/docker-command-launcher/commit/0349442))
+
+### Authors
+
+* Pedro Amador
 
 ## v0.1.0 (2019-05-10)
 
-### New
+### Changes
 
-* Add test wrapper ([5f54574](https://github.com/kairops/docker-command-launcher/commit/5f54574))
-* Initial import ([47d5b73](https://github.com/kairops/docker-command-launcher/commit/47d5b73))
+#### New
 
-### Build
+* Add test wrapper ([5f54574](https://github.com:kairops/docker-command-launcher/commit/5f54574))
+* Initial import ([47d5b73](https://github.com:kairops/docker-command-launcher/commit/47d5b73))
 
-* Update CHANGELOG.md to v0.1.0 with Red Panda JPL ([fa62826](https://github.com/kairops/docker-command-launcher/commit/fa62826))
-* Add CI pipeline script ([d3672ae](https://github.com/kairops/docker-command-launcher/commit/d3672ae))
+#### Build
+
+* Update CHANGELOG.md to v0.1.0 with Red Panda JPL ([fa62826](https://github.com:kairops/docker-command-launcher/commit/fa62826))
+* Add CI pipeline script ([d3672ae](https://github.com:kairops/docker-command-launcher/commit/d3672ae))
+
+#### Misc
+
+* Initial commit ([3f44e77](https://github.com:kairops/docker-command-launcher/commit/3f44e77))
+
+### Authors
+
+* Pedro Amador
+* Pedro Amador Rodríguez
 
