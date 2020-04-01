@@ -35,7 +35,7 @@ function assertCommandExist () {
 commandList=(
     commit-validator:0.1.2
     get-next-release-number:1.0.3
-    git-changelog-generator:1.0.0
+    git-changelog-generator:1.1.0
     hello-world:0.2.1
     md2html:1.1.1
     mdline:0.1.0
