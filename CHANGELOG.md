@@ -1,5 +1,25 @@
 # Changelog
 
+## v2.4.0 (2020-04-02)
+
+### Changes
+
+#### Upgrade
+
+* Use get-next-release-number v1.1.2 ([faee111](https://github.com:kairops/docker-command-launcher/commit/faee111))
+
+#### Build
+
+* Update Auto Release Log adding v2.4.0 info with JPL ([c427228](https://github.com:kairops/docker-command-launcher/commit/c427228))
+
+#### Docs
+
+* Generate v2.3.0 changelog with JPL ([2b490f7](https://github.com:kairops/docker-command-launcher/commit/2b490f7))
+
+### Authors
+
+* Pedro Amador
+
 ## v2.3.0 (2020-04-01)
 
 ### Changes
