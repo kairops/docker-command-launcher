@@ -3,26 +3,23 @@
 @Library('github.com/teecke/jenkins-pipeline-library@v3.4.1') _
 
 // Initialize global config
-cfg = jplConfig('docker-command-launcher', 'bash', '', [email:'redpandaci+docker-command-launcher@gmail.com'])
+cfg = jplConfig('docker-command-launcher', 'bash', '', [email: env.CIKAIROS_NOTIFY_EMAIL_TARGETS])
 
 pipeline {
-    agent none
+    agent { label 'docker' }
 
     stages {
         stage ('Initialize') {
-            agent { label 'docker' }
             steps  {
                 jplStart(cfg)
             }
         }
-        stage ('Test') {
-            agent { label 'docker' }
-            steps  {
-                sh 'bin/test.sh'
+        stage ('Bash linter') {
+            steps {
+                sh 'devcontrol run-bash-linter'
             }
         }
         stage ('Make release'){
-            agent { label 'docker' }
             when { branch 'release/new' }
             steps {
                 jplMakeRelease(cfg, true)

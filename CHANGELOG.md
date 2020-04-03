@@ -1,5 +1,30 @@
 # Changelog
 
+## v2.5.0 (2020-04-03)
+
+### Changes
+
+#### New
+
+* Add devcontrol actions ([36d91f5](https://github.com:kairops/docker-command-launcher/commit/36d91f5))
+
+#### Upgrade
+
+* Entrypoint refactor ([fb35c76](https://github.com:kairops/docker-command-launcher/commit/fb35c76))
+
+#### Build
+
+* Update Auto Release Log adding v2.5.0 info with JPL ([d84c0b0](https://github.com:kairops/docker-command-launcher/commit/d84c0b0))
+* Add bash linter stage and review pipeline ([147c4b9](https://github.com:kairops/docker-command-launcher/commit/147c4b9))
+
+#### Docs
+
+* Generate v2.4.0 changelog with JPL ([311d67a](https://github.com:kairops/docker-command-launcher/commit/311d67a))
+
+### Authors
+
+* Pedro Amador
+
 ## v2.4.0 (2020-04-02)
 
 ### Changes
