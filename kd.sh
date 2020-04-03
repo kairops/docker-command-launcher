@@ -7,8 +7,8 @@ function echo_err () {
 }
 
 function echo_debug () {
-    if [ "$KD_DEBUG" == "1" ]; then
-        echo >&2 -e ">>>> DEBUG >>>>> $(date "+%Y-%m-%d %H:%M:%S") docker-command-launcher: $@"
+    if [ "${KD_DEBUG}" == "1" ]; then
+        echo >&2 -e ">>>> DEBUG >>>>> $(date "+%Y-%m-%d %H:%M:%S") docker-command-launcher: " "$@"
     fi
 }
 echo_debug "begin"
@@ -16,17 +16,19 @@ echo_debug "Docker Command Launcher (c) Kairops 2019"
 
 # Functions
 function removeSentinel() {
+    local sentinel
     sentinel=$1
-    echo_debug "Removing sentinel image(s) $sentinel"
-    docker rmi $sentinel > /dev/null 2>&1
+    echo_debug "Removing sentinel image(s) ${sentinel}"
+    docker rmi "${sentinel}" > /dev/null 2>&1
     sentinel=""
 }
 function assertCommandExist () {
-    local search="$1"
+    local search
+    search="$1"
     for command in ${commandList[*]}; do
-        [[ "$(echo $command|cut -f 1 -d ':')" == $search ]] && return 0
+        [[ "$(echo "${command}"|cut -f 1 -d ':')" == "${search}" ]] && return 0
     done
-    echo_err "The Docker Command '$search' does not exist. Aborting"
+    echo_err "The Docker Command '${search}' does not exist. Aborting"
     echo_debug "end"
     exit 1
 }
@@ -34,7 +36,7 @@ function assertCommandExist () {
 # Initialize
 commandList=(
     commit-validator:0.1.4
-    get-next-release-number:1.0.4
+    get-next-release-number:1.1.0
     git-changelog-generator:1.1.2
     hello-world:0.2.1
     md2html:1.1.1
@@ -67,11 +69,11 @@ Examples:
 Available commands:
 "
     for item in ${commandList[*]}; do
-        echo -n "* $(echo $item|cut -f 1 -d ':')"
-        if [ "$KD_EDGE" == "1" ]; then
+        echo -n "* $(echo "${item}"|cut -f 1 -d ':')"
+        if [ "${KD_EDGE}" == "1" ]; then
             echo " (latest)"
         else
-            echo " v$(echo $item|cut -f 2 -d ':')"
+            echo " v$(echo "${item}"|cut -f 2 -d ':')"
         fi
     done
 
@@ -87,78 +89,78 @@ fi
 
 # Command check
 command=$1
-assertCommandExist $command
-if [ "$KD_EDGE" == "1" ]; then
-    command=$(echo $command|cut -f 1 -d ':')
-    command=$(echo "$command:latest")
-    echo $command
+assertCommandExist "${command}"
+if [ "${KD_EDGE}" == "1" ]; then
+    command=$(echo "${command}"|cut -f 1 -d ':')
+    command="${command}:latest"
+    echo "${command}"
 fi
-image=$imagePrefix$command
+image="${imagePrefix}${command}"
 shift
 
 # Parameter (file and folder) check
 mountFolder=""
 file=""
 if [ $# -gt 0 ]; then
-    if [ $1 != "-" ]; then
-        fileOrDirectory=$(echo "$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")")
-        if [ -f "$fileOrDirectory" ]; then
-            mountFolder=$(dirname "$fileOrDirectory")
-            file=$(basename "$fileOrDirectory")
+    if [ "$1" != "-" ]; then
+        fileOrDirectory=$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")
+        if [ -f "${fileOrDirectory}" ]; then
+            mountFolder=$(dirname "${fileOrDirectory}")
+            file=$(basename "${fileOrDirectory}")
         else
-            if [ -d "$fileOrDirectory" ]; then
-                mountFolder=$(dirname "$fileOrDirectory/.")
+            if [ -d "${fileOrDirectory}" ]; then
+                mountFolder=$(dirname "${fileOrDirectory}/.")
             fi
         fi
         shift
     fi
 fi
 mountInfo=""
-if [ "$mountFolder" != "" ]; then
-    mountInfo=$(echo "-v \"$mountFolder\":/workspace"|sed "s/ /\\ /g")
+if [ "${mountFolder}" != "" ]; then
+    mountInfo=$(echo "-v \"${mountFolder}\":/workspace"|sed "s/ /\\ /g")
 fi
 
 # Update command cache
-if [ "$KD_SENTINEL" == "1" ]; then
+if [ "${KD_SENTINEL}" == "1" ]; then
     sentinel=$(docker images ${imagePrefix}sentinel-*|awk 'NR>1 {print $1}')
-    if [ "$sentinel" != "" ]; then
+    if [ "${sentinel}" != "" ]; then
         # If more then one sentinel cache images exists, drop all
-        if [ $(echo "$sentinel"|wc -l) -gt 1 ]; then
-            removeSentinel "$sentinel"
+        if [ "$(echo "${sentinel}"|wc -l)" -gt 1 ]; then
+            removeSentinel "${sentinel}"
         else
             # Check time elapsed since sentinel cache image creation
-            sentinelTimestamp=$(echo $sentinel|awk -F '-' '{print $NF}')
+            sentinelTimestamp=$(echo "${sentinel}"|awk -F '-' '{print $NF}')
             currentTimestamp=$(date +%s)
-            echo_debug "Sentinel timestamp: $sentinelTimestamp"
-            echo_debug "Current timesamp: $currentTimestamp"
+            echo_debug "Sentinel timestamp: ${sentinelTimestamp}"
+            echo_debug "Current timesamp: ${currentTimestamp}"
             secondsElapsed=$((currentTimestamp - sentinelTimestamp))
-            echo_debug "Seconds Elapsed: $secondsElapsed"
-            if [ $secondsElapsed -gt $commandCacheSeconds ]; then
-                removeSentinel "$sentinel"
+            echo_debug "Seconds Elapsed: ${secondsElapsed}"
+            if [ ${secondsElapsed} -gt ${commandCacheSeconds} ]; then
+                removeSentinel "${sentinel}"
             fi
         fi
     fi
-    if [ "$sentinel" == "" ]; then
+    if [ "${sentinel}" == "" ]; then
         # Retrieve all command cache
         sentinelTimestamp=$(date +%s)
-        echo_debug "Creating new sentinel image $sentinelTimestamp"
-        echo -e "FROM alpine\nRUN echo $sentinelTimestamp > /.sentinel.lock" | docker build -t ${imagePrefix}sentinel-${sentinelTimestamp} - > /dev/null 2>&1
+        echo_debug "Creating new sentinel image ${sentinelTimestamp}"
+        echo -e "FROM alpine\nRUN echo ${sentinelTimestamp} > /.sentinel.lock" | docker build -t "${imagePrefix}sentinel-${sentinelTimestamp}" - > /dev/null 2>&1
         for command in ${commandList[*]}; do
-            echo_debug "Removing docker-command image for '$command'"
-            docker rmi ${imagePrefix}$command > /dev/null 2>&1 || true
+            echo_debug "Removing docker-command image for '${command}'"
+            docker rmi "${imagePrefix}${command}" > /dev/null 2>&1 || true
         done
     fi
 fi
 
 # Get image if not exist
-if [ "$(docker image ls -q $image)" == "" ]; then
-    echo_debug "Retrieving docker-command image $image"
-    docker pull $image > /dev/null 2>&1 || (echo_err "The docker image for the '$command' can't be retrieved. Aborting"; exit 1)
+if [ "$(docker image ls -q "${image}")" == "" ]; then
+    echo_debug "Retrieving docker-command image ${image}"
+    docker pull "${image}" > /dev/null 2>&1 || (echo_err "The docker image for the '${command}' can't be retrieved. Aborting"; exit 1)
 fi
 
 # Execute Docker Command with optional volume injection and input parameters
-dockerCommand=$(echo docker run -i --rm -e KD_DEBUG=$KD_DEBUG $mountInfo $image $file $@)
-echo_debug "Executing: '$dockerCommand'"
-eval $dockerCommand
+dockerCommand=$(docker run -i --rm -e KD_DEBUG="${KD_DEBUG}" "${mountInfo}" "${image}" "${file}" "$@")
+echo_debug "Executing: '${dockerCommand}'"
+eval "${dockerCommand}"
 
 echo_debug "end"
