@@ -1,5 +1,25 @@
 # Changelog
 
+## v2.6.1 (2020-04-04)
+
+### Changes
+
+#### Fix
+
+* Broken docker execution ([118976d](https://github.com:kairops/docker-command-launcher/commit/118976d))
+
+#### Build
+
+* Update Auto Release Log adding v2.6.1 info with JPL ([af8cdca](https://github.com:kairops/docker-command-launcher/commit/af8cdca))
+
+#### Docs
+
+* Generate v2.6.0 changelog with JPL ([2066d8c](https://github.com:kairops/docker-command-launcher/commit/2066d8c))
+
+### Authors
+
+* Pedro Amador
+
 ## v2.6.0 (2020-04-03)
 
 ### Changes
