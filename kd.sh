@@ -3,12 +3,12 @@
 set -eo pipefail
 
 function echo_err () {
-    echo >&2 -e "$@"
+    echo >&2 -e "$*"
 }
 
 function echo_debug () {
     if [ "${KD_DEBUG}" == "1" ]; then
-        echo >&2 -e ">>>> DEBUG >>>>> $(date "+%Y-%m-%d %H:%M:%S") docker-command-launcher: " "$@"
+        echo >&2 -e ">>>> DEBUG >>>>> $(date "+%Y-%m-%d %H:%M:%S") docker-command-launcher: " "$*"
     fi
 }
 echo_debug "begin"
@@ -159,7 +159,7 @@ if [ "$(docker image ls -q "${image}")" == "" ]; then
 fi
 
 # Execute Docker Command with optional volume injection and input parameters
-dockerCommand=$(docker run -i --rm -e KD_DEBUG="${KD_DEBUG}" "${mountInfo}" "${image}" "${file}" "$@")
+dockerCommand="docker run -i --rm -e KD_DEBUG=${KD_DEBUG} ${mountInfo} ${image} ${file} $*"
 echo_debug "Executing: '${dockerCommand}'"
 eval "${dockerCommand}"
 
