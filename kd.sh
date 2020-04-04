@@ -38,9 +38,9 @@ commandList=(
     commit-validator:0.1.4
     get-next-release-number:1.1.0
     git-changelog-generator:1.2.1
-    hello-world:0.2.1
-    md2html:1.1.1
-    mdline:0.1.0
+    hello-world:0.3.0
+    md2html:1.2.0
+    mdline:0.2.0
 )
 imagePrefix="kairops/dc-"
 commandCacheSeconds=86400
