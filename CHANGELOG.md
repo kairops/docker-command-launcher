@@ -1,5 +1,25 @@
 # Changelog
 
+## v2.7.0 (2020-04-04)
+
+### Changes
+
+#### Upgrade
+
+* Use git-changelog-generator v1.2.1 ([2ba929e](https://github.com:kairops/docker-command-launcher/commit/2ba929e))
+
+#### Build
+
+* Update Auto Release Log adding v2.7.0 info with JPL ([0169b8f](https://github.com:kairops/docker-command-launcher/commit/0169b8f))
+
+#### Docs
+
+* Generate v2.6.1 changelog with JPL ([874519e](https://github.com:kairops/docker-command-launcher/commit/874519e))
+
+### Authors
+
+* Pedro Amador
+
 ## v2.6.1 (2020-04-04)
 
 ### Changes
