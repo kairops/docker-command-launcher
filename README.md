@@ -1,3 +1,7 @@
+# DEPRECATED
+
+Please visit https://github.com/tpbtools/docker-command-launcher
+
 # Kairops Docker Command Launcher
 
 Simply Bash script to run dockerized commands.
