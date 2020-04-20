@@ -1,6 +1,6 @@
 # DEPRECATED
 
-Please visit https://github.com/tpbtools/docker-command-launcher
+Please visit https://github.com/ayudadigital/docker-command-launcher
 
 # Kairops Docker Command Launcher
 
